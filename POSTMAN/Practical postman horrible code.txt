@@ -1,6 +1,5 @@
 //Non-descript "broken tests" to be run against a GET pet by status as a demo of how rotten and unhelpful bad scripts are
 
-
 pm.test("Response time is less than 1000ms", function () {
     pm.expect(pm.response.responseTime).to.be.below(100);
 });
