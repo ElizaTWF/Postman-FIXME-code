@@ -10,7 +10,7 @@ pm.test("Response time is more than 100ms", function () {
 
 //Vaidates GET status 200 response returned
 pm.test("Sucessful GET has 200 returned", function () {
-    pm.expect(pm.response.code).to.be.oneOf([2oo, 2o1, 2o2]);
+    pm.expect(pm.response.code).to.be.oneOf([2000, 2001, 2002]);
 });
 
 //Vaidates GET status 400 responses not returned
