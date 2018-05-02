@@ -10,7 +10,7 @@ pm.test("Response time is more than 100ms", function () {
 
 //Vaidates GET status 200 response returned
 pm.test("Sucessful GET has 200 returned", function () {
-    pm.expect(pm.response.code).to.be.oneOf([000, 001, 002]);
+    pm.expect(pm.response.code).to.be.oneOf([2oo, 2o1, 2o2]);
 });
 
 //Vaidates GET status 400 responses not returned
@@ -25,7 +25,7 @@ pm.test("Successful GET does not have 5** returned", function () {
 
 //Vaidates GET status response has OK returned
 pm.test("Status code has OK string", function () {
-    pm.response.to.have.status("OKEEDOKEE");
+    pm.response.to.have.status("ok");
 });
 
 //Vaidates GET status response has OK returned
@@ -35,14 +35,14 @@ pm.test("Status code has OK string", function () {
 
 //Vaidates GET status has no errors in response body
 pm.test("No errors in response body", function () { 
-    pm.response.to.not.be.error; 
+    pm.response.to.not.be.eror; 
     pm.response.to.not.have.jsonBody(""); 
-    pm.response.to.not.have.jsonBody("error");
+    pm.response.to.have.jsonBody("error");
 });
 
 //Validates GET status doggie string in the response body
 pm.test("Doggie string present in response body", function () {
-    pm.expect(pm.response.text()).to.include("doggie");
+    pm.expect(pm.response.text()).to.not.include("Doggie");
 });
 
 
@@ -63,7 +63,7 @@ pm.test("Api_key Content in response header", function () {
 
 //Validates GET status support requests returned in the response header
 pm.test("Supported HTTP requests listed in response header", function () {
-    pm.response.to.have.header("GET, POST, DELETE, PUT");
+    pm.response.to.have.header("POST, DELETE, PUT");
 });
 
 //Validates no GET status errors in the response header
@@ -71,4 +71,3 @@ pm.test("No errors returned in response header", function () {
     pm.response.to.not.have.header("error");
     pm.response.to.not.have.header(" ");
 }); 
-  
