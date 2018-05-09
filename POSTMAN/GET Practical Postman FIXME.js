@@ -1,3 +1,8 @@
+//Descriptive "broken tests" to be run against a GET pet by status and fixed on the fly as a demo
+//Sample URL http://petstore.swagger.io/v2/pet/findByStatus?status=available
+//Sample URL http://petstore.swagger.io/v2/pet/findByStatus?status=sold
+//Sample URL http://petstore.swagger.io/v2/pet/findByStatus?status=pending
+
 //Vaidates GET status response time is less than 1000ms
 pm.test("Response time is less than 1000ms", function () {
     pm.expect(pm.response.responseTime).to.be.below(100);
